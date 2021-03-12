@@ -1,0 +1,19 @@
+{
+  "name": "ytm-desktop",
+  "version": "1.0.0",
+  "description": "Desktop app for YouTube Music",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JustThinkInC",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.1"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.20.3",
+    "node-fetch": "^2.6.1"
+  }
+}
