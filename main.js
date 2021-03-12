@@ -69,7 +69,8 @@ async function createWindow () {
             enableRemoteModule: true
         },
         backgroundColor: '#FFF',
-        darkTheme: true
+        darkTheme: true,
+        icon: path.join(__dirname, 'icon.png')
     })
 
     view = new BrowserView({webPreferences: { nodeIntegration: true}})
