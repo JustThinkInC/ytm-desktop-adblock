@@ -10,17 +10,15 @@ const mediaControl = require('./mediaControl.js')
 let mainWindow, view, playPauseTooltip, playPauseIcon
 
 playPauseTooltip = 'Pause'
-playPauseIcon = path.join(__dirname, 'pause-button.png')
+playPauseIcon = path.join(__dirname, 'pause.png')
 
 function updatePlayPauseThumbar() {
     if (playPauseTooltip === 'Pause') {
         playPauseTooltip = 'Play'
-        playPauseIcon = path.join(__dirname, 'play-button.png')
-        console.log('UPDATED')
-        console.log(playPauseTooltip)
+        playPauseIcon = path.join(__dirname, 'play.png')
     } else {
         playPauseTooltip = 'Pause'
-        playPauseIcon = path.join(__dirname, 'pause-button.png')
+        playPauseIcon = path.join(__dirname, 'pause.png')
     }
     createThumbar(mainWindow, view)
 }
@@ -31,7 +29,7 @@ function createThumbar(mainWindow, view) {
     mainWindow.setThumbarButtons([
         {
             tooltip: 'Previous',
-            icon: path.join(__dirname, 'play-previous-button.png'),
+            icon: path.join(__dirname, 'previous.png'),
             click () {
                 mediaControl.previousTrack(view)
             }
@@ -46,7 +44,7 @@ function createThumbar(mainWindow, view) {
         },
         {
             tooltip: 'Next',
-            icon: path.join(__dirname, 'play-next-button.png'),
+            icon: path.join(__dirname, 'next.png'),
             click () {
                 mediaControl.nextTrack(view)
             }
@@ -117,7 +115,6 @@ async function createWindow () {
     view.webContents.loadURL('https://music.youtube.com')
     view.webContents.on('page-title-updated', () => {
         mainWindow.setTitle(view.webContents.getTitle())
-        console.log(view.webContents.getTitle())
     })
     
     createThumbar(mainWindow, view)
