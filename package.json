@@ -52,8 +52,7 @@
     "publish": {
     "provider": "github",
     "owner": "JustThinkInC",
-    "repo": "ytm-desktop-adblock",
-    "GH_TOKEN": "e6885f813dac7c54939e401410c84f8b2c990672"
+    "repo": "ytm-desktop-adblock"
     }
   }  
 }
