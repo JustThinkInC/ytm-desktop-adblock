@@ -70,7 +70,7 @@ async function createWindow () {
         },
         backgroundColor: '#FFF',
         darkTheme: true,
-        icon: path.join(__dirname, 'icon.png')
+        icon: path.join(__dirname, 'icon.ico')
     })
 
     view = new BrowserView({webPreferences: { nodeIntegration: true}})
