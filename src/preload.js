@@ -2,7 +2,7 @@ const remote = require('electron').remote;
 
 const win = remote.getCurrentWindow(); /* Note this is different to the
 html global `window` variable */
-
+console.log("HELLO")
 // When document has loaded, initialise
 document.onreadystatechange = (event) => {
     if (document.readyState == "complete") {

@@ -10,15 +10,15 @@ const mediaControl = require('./mediaControl.js')
 let mainWindow, view, playPauseTooltip, playPauseIcon
 
 playPauseTooltip = 'Pause'
-playPauseIcon = path.join(__dirname, 'pause.png')
+playPauseIcon = path.join(__dirname, '../', './assets/pause.png')
 
 function updatePlayPauseThumbar() {
     if (playPauseTooltip === 'Pause') {
         playPauseTooltip = 'Play'
-        playPauseIcon = path.join(__dirname, 'play.png')
+        playPauseIcon = path.join(__dirname, '../', './assets/play.png')
     } else {
         playPauseTooltip = 'Pause'
-        playPauseIcon = path.join(__dirname, 'pause.png')
+        playPauseIcon = path.join(__dirname, '../', './assets/pause.png')
     }
     createThumbar(mainWindow, view)
 }
@@ -29,7 +29,7 @@ function createThumbar(mainWindow, view) {
     mainWindow.setThumbarButtons([
         {
             tooltip: 'Previous',
-            icon: path.join(__dirname, 'previous.png'),
+            icon: path.join(__dirname, '../', './assets/previous.png'),
             click () {
                 mediaControl.previousTrack(view)
             }
@@ -44,7 +44,7 @@ function createThumbar(mainWindow, view) {
         },
         {
             tooltip: 'Next',
-            icon: path.join(__dirname, 'next.png'),
+            icon: path.join(__dirname, '../', './assets/next.png'),
             click () {
                 mediaControl.nextTrack(view)
             }
@@ -63,14 +63,14 @@ async function createWindow () {
         titleBarStyle: 'hidden',
         frame: false,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, '..', './src/preload.js'),
             sandbox: true,
             nodeIntegration: true,
             enableRemoteModule: true
         },
         backgroundColor: '#FFF',
         darkTheme: true,
-        icon: path.join(__dirname, 'icon.ico')
+        icon: path.join(__dirname, '../', './assets/icon.ico')
     })
 
     view = new BrowserView({webPreferences: { nodeIntegration: true}})
@@ -112,7 +112,7 @@ async function createWindow () {
         }
     )
 
-    mainWindow.loadFile('index.html')
+    mainWindow.loadFile('./src/index.html')
     view.webContents.loadURL('https://music.youtube.com')
     view.webContents.on('page-title-updated', () => {
         mainWindow.setTitle(view.webContents.getTitle())
