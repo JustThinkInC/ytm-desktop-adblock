@@ -2,9 +2,9 @@
   "name": "ytm-desktop",
   "version": "1.0.0",
   "description": "Desktop app for YouTube Music",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
-    "start": "electron ./main.js",
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
@@ -27,16 +27,16 @@
     "appId": "ytm-desktop",
     "win": {
       "target": "nsis",
-      "icon": "./icon.ico"
+      "icon": "./assets/icon.ico"
     },
     "linux": {
       "target": "appimage",
-      "icon": "./icon.ico"
+      "icon": "./assets/icon.ico"
     },
     "mac": {
       "category": "music",
       "target": "zip",
-      "icon": "./icon.ico"
+      "icon": "./assets/icon.ico"
     }
   }
 }
