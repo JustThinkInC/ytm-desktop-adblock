@@ -5,15 +5,38 @@
   "main": "main.js",
   "scripts": {
     "start": "electron ./main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build-win": "electron-builder -w",
+    "build-linux": "electron-builder -l",
+    "build-mac": "electron-builder -m"
   },
   "author": "JustThinkInC",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^12.0.1"
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5"
   },
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.20.3",
     "node-fetch": "^2.6.1"
+  },
+  "build": {
+    "productName": "YouTube Music Desktop",
+    "appId": "ytm-desktop",
+    "win": {
+      "target": "nsis",
+      "icon": "./icon.ico"
+    },
+    "linux": {
+      "target": "appimage",
+      "icon": "./icon.ico"
+    },
+    "mac": {
+      "category": "music",
+      "target": "zip",
+      "icon": "./icon.ico"
+    }
   }
 }
