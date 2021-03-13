@@ -10,7 +10,10 @@
     "dist": "electron-builder",
     "build-win": "electron-builder -w",
     "build-linux": "electron-builder -l",
-    "build-mac": "electron-builder -m"
+    "build-mac": "electron-builder -m",
+    "publish-win": "electron-builder -w -p onTagOrDraft",
+    "publish-linux": "electron-builder -l -p onTagOrDraft",
+    "publish-mac": "electron-builder -m -p onTagOrDraft"
   },
   "author": "JustThinkInC",
   "license": "MIT",
@@ -32,20 +35,25 @@
     "appId": "ytm-desktop",
     "win": {
       "target": "nsis",
-      "icon": "./assets/icon.ico"
+      "icon": "./assets/icon.ico",
+      "publish": ["github"]
     },
     "linux": {
       "target": "appimage",
-      "icon": "./assets/icon.ico"
+      "icon": "./assets/icon.ico",
+      "publish": ["github"]
     },
     "mac": {
       "category": "music",
       "target": "zip",
-      "icon": "./assets/icon.ico"
-    }
-  },
-  "publish": {
+      "icon": "./assets/icon.ico",
+      "publish": ["github"]
+    },
+    "publish": {
     "provider": "github",
-    "repo": "https://github.com/JustThinkInC/ytm-desktop-adblock"
-  }
+    "owner": "JustThinkInC",
+    "repo": "ytm-desktop-adblock",
+    "GH_TOKEN": "e6885f813dac7c54939e401410c84f8b2c990672"
+    }
+  }  
 }
